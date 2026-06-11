@@ -8,7 +8,7 @@ TOKEN = os.getenv("BOT_TOKEN")
 if not TOKEN:
     raise ValueError("TOKEN environment variable not found")
 
-bot = telebot.TeleBot(TOKEN)
+bot_telegram = telebot.TeleBot(TOKEN)
 
 # Import dos handlers após o bot ser criado
-import handlers
+import bot.handlers

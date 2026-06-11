@@ -1,6 +1,17 @@
+from bot.bot import bot_telegram
+
+
 def main():
-    print("Hello from agent-ia-diversidade!")
+    """
+    Função principal que roda o bot
+    """
+
+    try:
+        print("Iniciando bot! 🤖")
+        bot_telegram.infinity_polling()
+    except Exception as e:
+        print(f"Erro no bot: {e}")
 
 
-if __name__ == "__main__":
+if "__main__" == __name__:
     main()
