@@ -2,7 +2,7 @@
 
 Projeto criado para a disciplina de Educação em Diversidade.
 
-## Como inicar
+## Como iniciar
 
 Primeiro rode o comando:
 ```bash
