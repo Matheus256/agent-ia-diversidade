@@ -26,14 +26,11 @@ def configurar_logger(nome_base="inspetor"):
     pasta_logs = os.path.join("logs", ano, f"{nomemes}")
     os.makedirs(pasta_logs, exist_ok=True)
 
-    # 1. Alterado de .log para .md
     caminho_arquivo = os.path.join(pasta_logs, f"{nome_base}_{data}.md")
 
-    # Se o arquivo for novo, cria o cabeçalho da tabela Markdown
     novo_arquivo = not os.path.exists(caminho_arquivo)
 
-    # 2. Formato configurado como linha de tabela Markdown
-    formato = "%(asctime)s - **[%(levelname)s]** -- %(message)s"
+    formato = "[%(asctime)s] - **[%(levelname)s]** -- %(message)s"
     formato_data = "%H:%M:%S"
 
     console_handler = logging.StreamHandler()
@@ -45,7 +42,6 @@ def configurar_logger(nome_base="inspetor"):
     logger.addHandler(console_handler)
     logger.addHandler(file_handler)
 
-    # 3. Escreve o cabeçalho da tabela se o arquivo acabou de ser criado
     if novo_arquivo:
         with open(caminho_arquivo, "a", encoding="utf-8") as f:
             f.write(f"# Logs de {data}\n\n")
